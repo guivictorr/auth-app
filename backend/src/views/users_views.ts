@@ -6,6 +6,7 @@ export default {
       name: user.name,
       email: user.email,
       id: user.id,
+      created_at: user.created_at,
     };
   },
 
