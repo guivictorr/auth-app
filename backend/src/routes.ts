@@ -1,9 +1,10 @@
-import { Request, Response, Router } from 'express';
+import { Router } from 'express';
+import UsersController from './controllers/UsersController';
 
 const routes = Router();
+const usersController = new UsersController();
 
-routes.get('/', (request: Request, response: Response) => {
-  response.json({ message: 'Ta funcionando meu chapa' });
-});
+routes.post('/users', usersController.create);
+routes.get('/users', usersController.index);
 
 export default routes;
