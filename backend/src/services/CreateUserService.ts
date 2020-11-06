@@ -24,6 +24,10 @@ class CreateUserService {
       password: passwordHash,
     });
 
+    if (!user) {
+      throw new Error('Invalid Credentials');
+    }
+
     return user;
   }
 }

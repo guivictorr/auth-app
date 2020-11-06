@@ -23,10 +23,6 @@ class UsersController {
       password,
     });
 
-    if (!user) {
-      return response.status(400).json({ message: 'Error creating new user.' });
-    }
-
     return response.status(201).json(users_views.render(user));
   }
 }
