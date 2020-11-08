@@ -7,6 +7,18 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 5px;
+    color: #bdbdbd;
+    font-size: 12px;
+  }
 `;
 
 export const Content = styled.main`
@@ -45,7 +57,9 @@ export const Form = styled.form`
     margin-bottom: 35px;
   }
 
-  p {
+  span {
+    color: #828282;
+    font-size: 14px;
     a {
       text-decoration: none;
       color: #2f80ed;

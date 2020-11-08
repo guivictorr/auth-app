@@ -11,7 +11,7 @@ const SignIn: React.FC = () => {
     <Container>
       <Content>
         <Form>
-          <h2>Login</h2>
+          <h2>Sign In</h2>
           <Input type="email" icon={MdEmail} placeholder="Email" />
           <Input
             type="password"
@@ -20,12 +20,16 @@ const SignIn: React.FC = () => {
             placeholder="Password"
           />
           <button type="submit">Login</button>
-          <p>
+          <span>
             Dont have account yet?
             <Link to="/signup">Register</Link>
-          </p>
+          </span>
         </Form>
       </Content>
+      <footer>
+        <p>Guilherme</p>
+        <p>devchallenges.io</p>
+      </footer>
     </Container>
   );
 };
