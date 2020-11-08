@@ -76,4 +76,10 @@ export const Form = styled.form`
   div + div {
     margin-top: 15px;
   }
+
+  .error {
+    display: block;
+    color: #fc4e3f;
+    margin-top: 15px;
+  }
 `;
