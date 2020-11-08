@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdEmail, MdLock } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 import Input from '../../components/Input';
 
@@ -19,7 +20,10 @@ const SignIn: React.FC = () => {
             placeholder="Password"
           />
           <button type="submit">Login</button>
-          <p>Dont have account yet? Register</p>
+          <p>
+            Dont have account yet?
+            <Link to="/signup">Register</Link>
+          </p>
         </Form>
       </Content>
     </Container>

@@ -45,6 +45,14 @@ export const Form = styled.form`
     margin-bottom: 35px;
   }
 
+  p {
+    a {
+      text-decoration: none;
+      color: #2f80ed;
+      margin-left: 5px;
+    }
+  }
+
   div + div {
     margin-top: 15px;
   }
