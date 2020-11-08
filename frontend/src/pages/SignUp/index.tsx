@@ -1,8 +1,9 @@
 import React, { ChangeEvent, useCallback, useState } from 'react';
 import { MdEmail, MdLock, MdPerson } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import Input from '../../components/Input';
+import api from '../../service/api';
 
 import { Container, Content, Form } from './styles';
 
@@ -14,6 +15,7 @@ interface ModelProps {
 }
 
 const SignIn: React.FC = () => {
+  const history = useHistory();
   const [error, setError] = useState('');
   const [model, setModel] = useState<ModelProps>({
     name: '',
@@ -42,9 +44,11 @@ const SignIn: React.FC = () => {
           return;
         }
 
-        console.log(model);
+        setError('');
+        await api.post('users', model);
+        history.goBack();
       } catch (err) {
-        console.log(err);
+        setError('Email already registered');
       }
     },
     [model],
