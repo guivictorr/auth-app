@@ -36,7 +36,7 @@ export const Form = styled.form`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 300px;
+  height: auto;
   color: #e0e0e0;
 
   button {
@@ -68,6 +68,12 @@ export const Form = styled.form`
   }
 
   div + div {
+    margin-top: 15px;
+  }
+
+  .error {
+    display: block;
+    color: #fc4e3f;
     margin-top: 15px;
   }
 `;
