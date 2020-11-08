@@ -28,12 +28,17 @@ const Input: React.FC<InputProps> = ({
     setIsFocused(true);
   }, []);
 
+  const handleInputBlur = useCallback(() => {
+    setIsFocused(false);
+  }, []);
+
   return (
     <Container isFocused={isFocused}>
       <Icon size={22} />
       <input
         ref={inputRef}
         onFocus={handleInputFocus}
+        onBlur={handleInputBlur}
         {...rest}
         type={showPassword ? 'text' : rest.type}
       />

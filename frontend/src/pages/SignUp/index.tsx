@@ -27,7 +27,7 @@ const SignIn: React.FC = () => {
           <button type="submit">Login</button>
           <span>
             Already a member?
-            <Link to="/signin">Login</Link>
+            <Link to="/">Login</Link>
           </span>
         </Form>
       </Content>

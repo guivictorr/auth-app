@@ -10,7 +10,7 @@ export const Container = styled.div<InputProps>`
   justify-content: flex-start;
   height: 48px;
   width: 356px;
-  border: 1px solid #bdbdbd;
+  border: 1px solid ${({ isFocused }) => (isFocused ? '#2f80ed' : '#bdbdbd')};
   border-radius: 8px;
   padding: 16px 14px;
 
