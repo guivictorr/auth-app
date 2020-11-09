@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../context/auth';
+import formatDate from '../../utils/formatDate';
 
 import { Container, Content } from './styles';
 
 const Dashboard: React.FC = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <Container>
       <Content>
@@ -15,15 +19,15 @@ const Dashboard: React.FC = () => {
         </header>
         <li>
           <span>NAME</span>
-          <p>Guilherme Victor</p>
+          <p>{user.name}</p>
         </li>
         <li>
           <span>EMAIL</span>
-          <p>guilhermevictor20@gmail.com</p>
+          <p>{user.email}</p>
         </li>
         <li>
           <span>MEMBER SINCE</span>
-          <p>05/11/2020</p>
+          <p>{formatDate(user.created_at)}</p>
         </li>
       </Content>
       <footer>
