@@ -1,12 +1,6 @@
-import React, {
-  ChangeEvent,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import React, { ChangeEvent, useCallback, useContext, useState } from 'react';
 import { MdEmail, MdLock } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import Input from '../../components/Input';
 import { AuthContext } from '../../context/auth';
@@ -20,6 +14,7 @@ interface ModelProps {
 
 const SignIn: React.FC = () => {
   const { signIn, user } = useContext(AuthContext);
+  const history = useHistory();
   const [error, setError] = useState('');
   const [model, setModel] = useState<ModelProps>({
     email: '',
@@ -43,6 +38,7 @@ const SignIn: React.FC = () => {
       try {
         await signIn(model);
         setError('');
+        history.push('dashboard');
       } catch (err) {
         setError('Invalid Email/Password');
       }
@@ -50,9 +46,9 @@ const SignIn: React.FC = () => {
     [model],
   );
 
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
+  if (user) {
+    history.push('dashboard');
+  }
 
   return (
     <Container>
