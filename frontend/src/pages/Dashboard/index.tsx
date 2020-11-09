@@ -1,11 +1,16 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../context/auth';
 import formatDate from '../../utils/formatDate';
+import SignIn from '../SignIn';
 
 import { Container, Content } from './styles';
 
 const Dashboard: React.FC = () => {
   const { user } = useContext(AuthContext);
+
+  if (!user) {
+    return <SignIn />;
+  }
 
   return (
     <Container>
