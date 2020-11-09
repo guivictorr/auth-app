@@ -5,11 +5,17 @@ import UpdateUserService from '../services/UpdateUserService';
 import users_views from '../views/users_views';
 
 class UsersController {
-  public async index(request: Request, response: Response): Promise<Response> {
-    const userRepository = new UserRepository();
-    const users = await userRepository.findAll();
+  public async search(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
 
-    return response.status(200).json(users_views.renderMany(users));
+    const userRepository = new UserRepository();
+    const user = await userRepository.findById(id);
+
+    if (!user) {
+      return response.status(401).json({ message: 'User not found' });
+    }
+
+    return response.status(200).json(users_views.render(user));
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
