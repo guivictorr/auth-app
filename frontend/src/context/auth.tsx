@@ -21,6 +21,7 @@ interface UserData {
 interface ContextProps {
   user: User;
   signIn(credentials: Credentials): Promise<void>;
+  signOut(): void;
 }
 
 export const AuthContext = createContext<ContextProps>({} as ContextProps);
@@ -50,8 +51,14 @@ export const AuthProvider: React.FC = ({ children }) => {
     setUserData({ token, user });
   }, []);
 
+  const signOut = useCallback(() => {
+    localStorage.removeItem('UserToken');
+    localStorage.removeItem('UserData');
+    setUserData({} as UserData);
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ signIn, user: userData.user }}>
+    <AuthContext.Provider value={{ signIn, signOut, user: userData.user }}>
       {children}
     </AuthContext.Provider>
   );

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { FiChevronLeft } from 'react-icons/fi';
 import { AuthContext } from '../../context/auth';
 import formatDate from '../../utils/formatDate';
@@ -8,7 +8,11 @@ import SignIn from '../SignIn';
 import { Container, Content } from './styles';
 
 const Dashboard: React.FC = () => {
-  const { user } = useContext(AuthContext);
+  const { user, signOut } = useContext(AuthContext);
+
+  const handleSignOut = useCallback(() => {
+    signOut();
+  }, [signOut]);
 
   if (!user) {
     return <SignIn />;
@@ -17,7 +21,7 @@ const Dashboard: React.FC = () => {
   return (
     <Container>
       <Content>
-        <button type="button">
+        <button type="button" onClick={handleSignOut}>
           <FiChevronLeft size={24} />
           <p>Sign out</p>
         </button>
