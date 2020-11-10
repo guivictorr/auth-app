@@ -76,16 +76,24 @@ export const Content = styled.main`
         }
       }
 
-      button {
-        border: 1px solid #bdbdbd;
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border: 1px solid #e0e0e0;
         border-radius: 12px;
         width: 95px;
         height: 38px;
         background-color: transparent;
-        color: #bdbdbd;
+        color: #e0e0e0;
         font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: #e0e0e0;
+          color: #000000;
+        }
       }
     }
 

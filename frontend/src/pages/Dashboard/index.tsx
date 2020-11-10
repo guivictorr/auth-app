@@ -1,4 +1,5 @@
 import React, { useCallback, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { FiChevronLeft } from 'react-icons/fi';
 import { AuthContext } from '../../context/auth';
 import formatDate from '../../utils/formatDate';
@@ -31,7 +32,7 @@ const Dashboard: React.FC = () => {
               <p>Profile</p>
               <span>Some info may be visible to other people</span>
             </div>
-            <button type="button">Edit</button>
+            <Link to="/update/user">Edit</Link>
           </header>
           <li>
             <span>NAME</span>
