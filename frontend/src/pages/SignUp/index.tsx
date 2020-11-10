@@ -102,7 +102,7 @@ const SignIn: React.FC = () => {
             onChange={updateModel}
           />
           {error && <span className="error">{error}</span>}
-          <button type="submit">Login</button>
+          <button type="submit">Register</button>
           <span>
             Already a member?
             <Link to="/">Login</Link>
