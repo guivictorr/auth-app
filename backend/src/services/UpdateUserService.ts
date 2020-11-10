@@ -1,4 +1,4 @@
-import { compare, hash } from 'bcrypt';
+import { hash } from 'bcrypt';
 import User from '../models/User';
 import IUserRepository from '../repositories/IUserRepository';
 
@@ -29,12 +29,6 @@ class UpdateUserService {
       if (verifyEmail) {
         throw new Error('Email already used');
       }
-    }
-
-    const passwordCompare = await compare(password, user.password);
-
-    if (passwordCompare) {
-      throw new Error('Password already used');
     }
 
     const passwordHash = await hash(password, 8);

@@ -126,6 +126,11 @@ export const Content = styled.main`
       margin-top: 24px;
       cursor: pointer;
     }
+
+    .error {
+      color: #fc4e3f;
+      margin-top: 15px;
+    }
   }
 
   footer {

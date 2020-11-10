@@ -10,9 +10,9 @@ const Routes: React.FC = () => {
   return (
     <BrowserRouter>
       <Route path="/" exact component={SignIn} />
-      <Route path="/signup" component={SignUp} />
-      <Route path="/dashboard" component={Dashboard} />
-      <Route path="/update/user" component={UpdateUser} />
+      <Route path="/signup" exact component={SignUp} />
+      <Route path="/dashboard" exact component={Dashboard} />
+      <Route path="/update/user" exact component={UpdateUser} />
     </BrowserRouter>
   );
 };
