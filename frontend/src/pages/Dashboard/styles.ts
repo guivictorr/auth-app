@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const DashBoardContainer = styled.div`
   background-color: #252329;
   height: 100%;
 
@@ -10,7 +10,7 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const Content = styled.main`
+export const DashBoardContent = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
