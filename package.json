@@ -5,7 +5,7 @@
    "author": "Guilherme",
    "license": "MIT",
    "scripts": {
-      "start": "ts-node src/server.ts"
+      "start": "ts-node ./node_modules/typeorm/cli.js migration:run && ts-node src/server.ts"
    },
    "dependencies": {
       "bcrypt": "^5.0.0",
