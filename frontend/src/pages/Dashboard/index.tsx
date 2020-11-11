@@ -6,7 +6,7 @@ import formatDate from '../../utils/formatDate';
 
 import SignIn from '../SignIn';
 
-import { Container, Content } from './styles';
+import { DashBoardContainer, DashBoardContent } from './styles';
 
 const Dashboard: React.FC = () => {
   const { user, signOut } = useContext(AuthContext);
@@ -20,8 +20,8 @@ const Dashboard: React.FC = () => {
   }
 
   return (
-    <Container>
-      <Content>
+    <DashBoardContainer>
+      <DashBoardContent>
         <button type="button" onClick={handleSignOut}>
           <FiChevronLeft size={24} />
           <p>Sign out</p>
@@ -51,8 +51,8 @@ const Dashboard: React.FC = () => {
           <p>Guilherme</p>
           <p>devchallenges.io</p>
         </footer>
-      </Content>
-    </Container>
+      </DashBoardContent>
+    </DashBoardContainer>
   );
 };
 

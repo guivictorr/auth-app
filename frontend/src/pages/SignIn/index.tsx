@@ -5,7 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import Input from '../../components/Input';
 import { AuthContext } from '../../context/auth';
 
-import { Container, Content, Form } from './styles';
+import { SignInContainer, SignInContent, SignInForm } from './styles';
 
 interface ModelProps {
   email: string;
@@ -51,9 +51,9 @@ const SignIn: React.FC = () => {
   }
 
   return (
-    <Container>
-      <Content>
-        <Form onSubmit={handleSubmit}>
+    <SignInContainer>
+      <SignInContent>
+        <SignInForm onSubmit={handleSubmit}>
           <h2>Sign In</h2>
           <Input
             type="email"
@@ -80,13 +80,13 @@ const SignIn: React.FC = () => {
             Dont have account yet?
             <Link to="/signup">Register</Link>
           </span>
-        </Form>
-      </Content>
+        </SignInForm>
+      </SignInContent>
       <footer>
         <p>Guilherme</p>
         <p>devchallenges.io</p>
       </footer>
-    </Container>
+    </SignInContainer>
   );
 };
 

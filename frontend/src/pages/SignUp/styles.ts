@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const SignUpContainer = styled.div`
   background-color: #252329;
   height: 100%;
 
@@ -21,7 +21,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Content = styled.main`
+export const SignUpContent = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +31,7 @@ export const Content = styled.main`
   padding: 24px;
 `;
 
-export const Form = styled.form`
+export const SignUpForm = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;

@@ -5,7 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import Input from '../../components/Input';
 import api from '../../service/api';
 
-import { Container, Content, Form } from './styles';
+import { SignUpContainer, SignUpContent, SignUpForm } from './styles';
 
 interface ModelProps {
   name: string;
@@ -55,9 +55,9 @@ const SignIn: React.FC = () => {
   );
 
   return (
-    <Container>
-      <Content>
-        <Form onSubmit={handleSubmit}>
+    <SignUpContainer>
+      <SignUpContent>
+        <SignUpForm onSubmit={handleSubmit}>
           <h2>Sign Up</h2>
           <p>
             This is just a study project, the stored data will not be used for
@@ -107,13 +107,13 @@ const SignIn: React.FC = () => {
             Already a member?
             <Link to="/">Login</Link>
           </span>
-        </Form>
-      </Content>
+        </SignUpForm>
+      </SignUpContent>
       <footer>
         <p>Guilherme</p>
         <p>devchallenges.io</p>
       </footer>
-    </Container>
+    </SignUpContainer>
   );
 };
 

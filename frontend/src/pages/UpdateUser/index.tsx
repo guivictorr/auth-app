@@ -5,7 +5,7 @@ import { AuthContext } from '../../context/auth';
 
 import api from '../../service/api';
 
-import { Container, Content } from './styles';
+import { UpdateContainer, UpdateContent } from './styles';
 
 interface ModelProps {
   name: string;
@@ -56,8 +56,8 @@ const UpdateUser: React.FC = () => {
   }
 
   return (
-    <Container>
-      <Content>
+    <UpdateContainer>
+      <UpdateContent>
         <Link to="/dashboard">
           <FiChevronLeft size={24} />
           <p>Back</p>
@@ -112,8 +112,8 @@ const UpdateUser: React.FC = () => {
           <p>Guilherme</p>
           <p>devchallenges.io</p>
         </footer>
-      </Content>
-    </Container>
+      </UpdateContent>
+    </UpdateContainer>
   );
 };
 
