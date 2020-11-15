@@ -34,9 +34,7 @@ class SessionUserService {
       throw new Error('Invalid Credentials');
     }
 
-    const token = sign({}, process.env.APP_SECRET as string, {
-      expiresIn: '1d',
-    });
+    const token = sign({}, process.env.APP_SECRET as string);
 
     return {
       token,
